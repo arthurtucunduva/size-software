@@ -1,0 +1,45 @@
+from re import M
+# desenvolver um software para indicação do tamanho da camiseta em função do tipó do usuário
+# se a largura e altura nao se enquadrarem no mesmo tamanho, deve-se escolher o maior valor
+altura= int(input('qual é a sua medida de altura? ')) # ler a medida de altura (A)
+largura = int(input('qual é a sua medida de largura? ')) # ler a medida de largura (L)
+tamanho_final = 0
+if altura >= 20 and altura <= 25: #condicionar a altura com o tamanho_altura
+  tamanho_altura = 'P'
+elif altura >25 and altura <= 30:
+  tamanho_altura = 'M'
+elif altura > 30 and altura<= 35:
+  tamanho_altura = 'G'
+elif altura >35 and altura <= 40:
+  tamanho_altura = 'XG'
+else:
+  tamanho_altura = 'XXG'
+if largura >= 25 and largura <= 30: #condicionar a largura com o tamanho_largura
+  tamanho_largura = 'P'
+elif largura > 30 and largura <= 35:
+  tamanho_largura = 'M'
+elif largura > 35 and largura <= 40:
+  tamanho_largura = 'G'
+elif largura > 40 and largura <= 45:
+  tamanho_largura = 'XG'
+else:
+  tamanho_largura = 'XXG'
+
+if (tamanho_largura == "P") and (tamanho_altura == "P"):  #condicionar  o tamanho final
+  tamanho_final = 'P'
+if (tamanho_largura == 'M') and (tamanho_altura == 'M'):
+  tamanho_final = 'M'
+if (tamanho_largura == 'G') and (tamanho_altura == 'G'):
+  tamanho_final = 'G'
+if (tamanho_largura == 'XG') and (tamanho_altura == 'XG'):
+  tamanho_final = 'XG'
+else:
+  tamanho_final == 'XXG'
+ordem_tamanhos = ["P", "M", "G", "XG", "XXG"]
+
+   
+if ordem_tamanhos.index(tamanho_largura) > ordem_tamanhos.index(tamanho_altura):  # Escolhe o maior tamanho entre os dois
+        tamanho_final = tamanho_largura
+else:
+        tamanho_final = tamanho_altura
+print(f"Tamanho da camiseta: {tamanho_final}")
